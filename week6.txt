@@ -1,0 +1,26 @@
+1. 環境整理好 
+   => 確定 vue cli 可以運作
+   => env path跟api
+   => eslint加入必定加入分號規則
+   => 載入 axios 、 bootstrap5
+2. 先建立路由前台後台的首頁頁面導覽
+   step: 建立元件 => 把路由表寫一寫 => 導覽列填入view路由的路徑 
+   => 前台 => 將首頁修改=>原本 HomeWiew 改成 前台的頁面 => path的 '/' 得元件改成frontHomePageView，
+   => 後台 => dashBoardView.vue => 設定路徑跟import元件 
+3. nav bar 元件 => bootstrap 列進去=>將 a連結改成router 路徑 router-link  
+4. 前台 
+   => 先做產品列表  productListView.vue
+      => 在 main.js 匯入 axios
+      => 寫個函數 getProductData() 抓取產品列表並放在products陣列
+      => mounted初始化的時候啟用getProductData
+      => 用bootstrap匯入卡片(main.js import)
+      => 參考老師直播的bootstrap排版 => container->row->col
+	  row 決定內層數量 row-cols-4 決定一列有4個欄位 gutters決定欄位的間距(g-1~5)1最大5最小
+   => 建立單個產品詳細資訊view => productView.vue
+   => 建立路由 => 路徑名稱 /productInfor/:id ， id是產品個別的id
+   => 所有產品的按鈕當作前往每個產品的個別頁面 router-view 
+   => :to="`/productInfor/${item.id}`" 前往個別產品的page 
+   => $route -> 物件 -> 取值
+   => 做詳細資訊排版 ok
+   => 購物車列表 cartListView.vue 
+   => 清空購物車、單筆刪除跟修改數量
